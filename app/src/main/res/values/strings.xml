@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">assessment</string>
+    <string name="app_name">Daftar Buah</string>
+    <string name="apel">Appel adalahh</string>
+    <string name="alpukat">Alpukat adalah</string>
+    <string name="jeruk">Jeruk Adalah</string>
+    <string name="jambu">Jambu Adalah</string>
+    <string name="pisang">Pisang adalah</string>
 </resources>
