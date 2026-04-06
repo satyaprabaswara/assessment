@@ -26,6 +26,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.satyayudha0077.assessment.R
 import com.satyayudha0077.assessment.model.Buah
 import com.satyayudha0077.assessment.ui.theme.AssessmentTheme
@@ -33,20 +35,19 @@ import kotlin.collections.forEach
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen() {
+fun MainScreen(navController: NavController, data: List<Buah>) {
     val data = listOf(
-        Buah("Apel", R.drawable.apel, R.string.apel),
-        Buah("Alpukat", R.drawable.alpukat, R.string.alpukat),
-        Buah("Jeruk", R.drawable.jeruk, R.string.jeruk),
-        Buah("Jambu", R.drawable.jambu, R.string.jambu),
-        Buah("Pisang", R.drawable.pisang, R.string.pisang)
+        Buah(stringResource(R.string.buah_a), R.drawable.apel, R.string.apel),
+        Buah(stringResource(R.string.buah_al), R.drawable.alpukat, R.string.alpukat),
+        Buah(stringResource(R.string.buah_j), R.drawable.jeruk, R.string.jeruk),
+        Buah(stringResource(R.string.buah_jam), R.drawable.jambu, R.string.jambu),
+        Buah(stringResource(R.string.buah_p), R.drawable.pisang, R.string.pisang)
     )
+
     Scaffold(
         topBar = {
             TopAppBar(
-                title = {
-                    Text(text = stringResource(id = R.string.app_name))
-                },
+                title = { Text(text = stringResource(id = R.string.app_name)) },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     titleContentColor = MaterialTheme.colorScheme.primary
@@ -54,9 +55,34 @@ fun MainScreen() {
             )
         }
     ) { innerPadding ->
-        ScreenContent(data = data,Modifier.padding(innerPadding))
+        Column(
+            modifier = Modifier
+                .padding(innerPadding)
+                .fillMaxSize()
+                .padding(16.dp)
+        ) {
+            data.forEachIndexed { index, buah ->
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { navController.navigate("detail/$index") }
+                        .padding(8.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Image(
+                        painter = painterResource(id = buah.gambar),
+                        contentDescription = buah.nama,
+                        modifier = Modifier.size(80.dp)
+                    )
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Text(text = buah.nama, fontSize = 20.sp)
+                }
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+        }
     }
 }
+
 
 @Composable
 fun ScreenContent(
@@ -106,7 +132,12 @@ fun ScreenContent(
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 fun MainScreenPreview() {
+    val navController = rememberNavController()
+    val dummyData = listOf(
+        Buah("Apel", R.drawable.apel, R.string.apel),
+        Buah("Pisang", R.drawable.pisang, R.string.pisang)
+    )
     AssessmentTheme {
-        MainScreen()
+        MainScreen(navController, dummyData)
     }
 }
