@@ -11,4 +11,10 @@
     <string name="bagikan">Bagikan</string>
     <string name="input_invalid">Input tidak valid!</string>
     <string name="total_harga">Total harga: Rp %1$d</string>
+    <string name="kembali">Kembali</string>
+    <string name="buah_a">Apel</string>
+    <string name="buah_al">Alpukat</string>
+    <string name="buah_j">Jeruk</string>
+    <string name="buah_jam">Jambu</string>
+    <string name="buah_p">Pisang</string>
 </resources>

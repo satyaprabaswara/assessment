@@ -12,4 +12,10 @@
     <string name="bagikan">Share</string>
     <string name="input_invalid">Invalid input!</string>
     <string name="total_harga">Total price: Rp %1$d</string>
+    <string name="kembali">Back</string>
+    <string name="buah_a">Apple</string>
+    <string name="buah_al">Avocado</string>
+    <string name="buah_j">Orange</string>
+    <string name="buah_jam">Guava</string>
+    <string name="buah_p">Banana</string>
 </resources>
