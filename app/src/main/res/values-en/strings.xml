@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Fruit List</string>
+    <string name="app_name">MyFruit</string>
     <string name="apel">Apple is a healthy fruit</string>
     <string name="alpukat">Avocado is a nutritious fruit</string>
     <string name="jeruk">Orange is a source of vitamin C</string>
