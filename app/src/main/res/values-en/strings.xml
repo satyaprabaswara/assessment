@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fruit List</string>
+    <string name="apel">Apple is a healthy fruit</string>
+    <string name="alpukat">Avocado is a nutritious fruit</string>
+    <string name="jeruk">Orange is a source of vitamin C</string>
+    <string name="jambu">Guava is a tropical fruit</string>
+    <string name="pisang">Banana is an energy source</string>
+    <string name="jumlah_label">Number of fruits</string>
+    <string name="harga_label">Price per fruit</string>
+    <string name="hitung_total">Calculate Total</string>
+    <string name="bagikan">Share</string>
+    <string name="input_invalid">Invalid input!</string>
+    <string name="total_harga">Total price: Rp %1$d</string>
+</resources>
